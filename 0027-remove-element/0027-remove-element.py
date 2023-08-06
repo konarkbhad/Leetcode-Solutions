@@ -1,20 +1,25 @@
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        l = 0
-        for r in range(len(nums)):
-            if nums[r] != val:
-                nums[l] = nums[r]
-                l += 1
-        return l
-            
+        '''
+        L L L
+        3,0,3,0 val = 2
+        R R R R R
+        '''
+        left = 0
+        for right in range(len(nums)):
+            if nums[right] != val:
+                nums[left] = nums[right]
+                left += 1
+        return left
         
         
-#         l, r = 0, len(nums) - 1
-#         while l <= r:
-#             if nums[l] == val:
-#                 nums[l], nums[r] = nums[r], nums[l]
-#                 r -= 1
-#             else:
-#                 l += 1
-        
-#         return l
+        '''
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            if nums[left] == val:
+                nums[left], nums[right] = nums[right], nums[left]
+                right -= 1
+            else:
+                left += 1
+        return left
+        '''

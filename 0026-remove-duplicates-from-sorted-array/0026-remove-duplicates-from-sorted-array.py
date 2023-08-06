@@ -19,4 +19,17 @@ class Solution:
                 left += 1
         
         return left
+    
+    
+    
+    '''
+        left = 0
+        
+        for right in range(1, len(nums)):
+            if nums[left] != nums[right]:
+                nums[left + 1] = nums[right]
+                left += 1
+        
+        return left + 1
+    '''
         

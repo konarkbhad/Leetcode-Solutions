@@ -1,8 +1,20 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        nums.sort()
-        n = len(nums)
-        return nums[n // 2]
+        # time linear
+        # space constant
+        # Boyer Moore Algorithm
+        maj, count = 0, 0
+        
+        for n in nums:
+            if count == 0:
+                maj = n
+                
+            if n == maj:
+                count += 1
+            else:
+                count -= 1
+        
+        return maj
         
         # time linear
         # space linear
@@ -15,4 +27,11 @@ class Solution:
                 maj, maxCount = n, count[n]
         
         return maj
+    
+    
+        # time nlog(n)
+        # space constant
+        nums.sort()
+        n = len(nums)
+        return nums[n // 2]
         
